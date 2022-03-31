@@ -35,8 +35,8 @@ function AddVoca () {
         };
         
         dispatch(addVocaFB(dictionary));
-        // dispatch(createVoca(dictionary));
         histroy.goBack();
+        
         };
 
     return(

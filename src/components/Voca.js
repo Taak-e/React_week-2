@@ -1,13 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux"
 
-
 function Voca() {
 
     const data = useSelector((state) => state.vocas.list);
   
-    
-
     return (
         <div>
             <h1>수정하기</h1>
