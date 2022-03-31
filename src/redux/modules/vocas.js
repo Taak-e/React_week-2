@@ -96,8 +96,8 @@ export default function reducer(state = initialState, action = {}) {
             const arr = [...state.list] 
             arr.splice(action.index, 1)
             return {list : arr};
-
         }
+
         default: 
             return state;
     }

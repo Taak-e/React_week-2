@@ -5,7 +5,9 @@ function Header () {
     return(
     <div className="header">
         <h1>
-            <a href="/">Developer's Voca-Log</a>
+            <a style={{
+                textDecorationLine: "none"
+            }} href="/">Developer's Dictionary</a>
         </h1>
     </div>
     )}
