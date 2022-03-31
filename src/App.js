@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import VocaList from './components/VocaList';
+import AddVoca from './components/AddVoca';
+import { Route, Switch } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import {loadVocaFB} from './redux/modules/vocas'
+
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect (() => {
+    dispatch(loadVocaFB());
+}, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <Header />
+          <Switch>
+            <Route exact path="/">
+              <VocaList />
+            </Route>
+            {/* <Route exact path="/voca/:num">
+              <Voca />
+            </Route> */}
+            <Route path="/addVoca">
+              <AddVoca />
+            </Route>
+          </Switch>
+      </div>
   );
 }
 
